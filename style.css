@@ -1,0 +1,9 @@
+aside {
+    background: rgb(235, 235, 235);
+    height: 100vh;
+}
+
+#dashboard {
+    padding-left: 5vh;
+    padding-top: 3vh;
+}
