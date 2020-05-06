@@ -7,3 +7,7 @@ aside {
     padding-left: 5vh;
     padding-top: 3vh;
 }
+
+.card {
+    width: 100vh;
+}
