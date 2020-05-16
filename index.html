@@ -28,15 +28,17 @@
                         <button type="submit" class="input-group-text btn btn-primary" id="search-btn"><i
                                 class="fas fa-search-location"></i></button>
                     </form>
-
                     <button type="button" class="btn btn-primary my-2" id="location-btn">Use my current location <i
                             class="fas fa-location-arrow"></i></button>
                 </div>
             </div>
-            <div class="row">
-                <ul class="col list-group ml-3" id="saved-searches">
+            <div class="row container">
+                <div class="col">
+                    <h3>Saved Searches:</h3>
+                    <ul class="list-group " id="saved-searches">
 
-                </ul>
+                    </ul>
+                </div>
             </div>
         </aside>
         <div class="col-9" id="dashboard">
@@ -47,6 +49,12 @@
                     <p id="humidity"></p>
                     <p id="wind"></p>
                     <p id="uv"></p>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-secondary m-2" id="save-btn" data-saved="false"
+                                style="visibility: hidden;">Save City</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row py-3" id="five-day">
@@ -66,7 +74,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
             crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
         <script type="text/javascript" src="script.js"></script>
 </body>
 

@@ -11,3 +11,8 @@ aside {
 .card {
     width: 100vh;
 }
+
+.delete-btn {
+    position: absolute;
+    right: 20px;
+}
