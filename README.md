@@ -14,16 +14,16 @@ When searching for a city, the user has the option to either type an address/pla
 
 If the users current location is used, the application will go straight to the citySearch function to query the openweathermap API for the weather at those coordinates. If the search bar is used, the address is first run through the geocodeAddress function. This function uses the google maps API to convert the address into coordinates that can then be run through the citySearch function to get the weather results.
 
-![citySearch function](./readme-assets/citySearch.png)
+![citySearch function](./readme-assets/citySearch.PNG)
 
 ## Displaying the results
 
 The search results are displayed into the main dashboard of the application. The current weather for the specified location is displayed in the main box up top and the 5 day forecast is within the 5 cards underneath. The dates in the application are obtained by moment.js.
 
-![dashboard](./readme-assets/dashboard.png)
+![dashboard](./readme-assets/dashboard.PNG)
 
 Search results can be saved using the save button at the bottom of the dashboard. Saved results can be deleted by either using the same button, which changes based on the state of the result, or by using the 'minus' logo on the saved results list.
 
-![saved results](./readme-assets/saved.png)
+![saved results](./readme-assets/saved.PNG)
 
 Selecting a saved search will display the current results for that location. Saved searches and the most recent search are stored in local storage. This way when a user revisits the application they can pick up exactly where they left off.
