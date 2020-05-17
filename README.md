@@ -24,6 +24,6 @@ The search results are displayed into the main dashboard of the application. The
 
 Search results can be saved using the save button at the bottom of the dashboard. Saved results can be deleted by either using the same button, which changes based on the state of the result, or by using the 'minus' logo on the saved results list.
 
-![dashboard](./readme-assets/saved.png)
+![saved results](./readme-assets/saved.png)
 
 Selecting a saved search will display the current results for that location. Saved searches and the most recent search are stored in local storage. This way when a user revisits the application they can pick up exactly where they left off.
