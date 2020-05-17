@@ -24,6 +24,7 @@ function citySearch(result, city) {
 
 // Display the weather results
 function displayResult(result, city) {
+    $("#dashboard").css("visibility", "visible")
     // display current weather
     $("#city").text(city + " (" + date.day1 + ")");
     var icon = $("<img src='https://openweathermap.org/img/wn/" + result.current.weather[0].icon + "@2x.png'>");
