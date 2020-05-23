@@ -1,5 +1,7 @@
 # Weather Dashboard
 
+https://scottsharris-az.github.io/weather-dashboard/
+
 This application is a weather dashboard where a user can use their current location or search for an address or place and receive weather information for that location. Users can save search results for easy access and the application will load up on the last searched result in future uses.
 
 ![dashboard demo](./readme-assets/dashboard.gif)
