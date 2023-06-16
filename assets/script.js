@@ -223,6 +223,11 @@ $("#save-btn").hover(
     }
 );
 
+
 // render saved searches on page load
 renderCityList();
 renderLastSearched();
+
+document.getElementById('theme-toggle').addEventListener('change', function() {
+    document.body.classList.toggle('dark-theme');
+});

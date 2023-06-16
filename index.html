@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <script src="https://kit.fontawesome.com/4c9d518f66.js" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
@@ -13,27 +14,40 @@
 </head>
 
 <body>
-    <header class="row">
-        <div class="col text-center bg-dark text-light p-2">
-            <h1>Weather Dashboard</h1>
+    <header class="row bg-dark text-light p-2">
+        <div class="col-10 my-auto" style="padding-left:33%;">
+            <h1><span style="font-weight:lighter;">Scoot</span><span style="font-weight:bold">Cast</span> <span style="font-size:large">Weather Dashboard</span></h1>
+        </div>
+        <div class="col-2 my-auto">
+            <span style="font-size:smaller">Theme Toggle</span>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <div class="theme-labels">
+                    <span class="light-theme">Light</span>
+                    <span class="dark-theme">Dark</span>
+                </div>
+            </div>
         </div>
     </header>
     <div class="row">
         <aside class="col-md-3 col-sm-12">
             <div class="row container">
-                <div class="col">
+                <div class="col mt-5">
                     <h3>Search for a City:</h3>
                     <form class="input-group md-form form-sm form-2 pl-0" id="city-search">
                         <input class="form-control my-0 py-1" type="text" id="search-bar" placeholder="Search">
                         <button type="submit" class="input-group-text btn btn-primary" id="search-btn"><i
                                 class="fas fa-search-location"></i></button>
                     </form>
-                    <button type="button" class="btn btn-primary my-2" id="location-btn">Use my current location <i
+                    <button type="button" class="btn btn-primary my-4" id="location-btn">Use my current location <i
                             class="fas fa-location-arrow"></i></button>
                 </div>
             </div>
             <div class="row container">
-                <div class="col">
+                <div class="col mt-3">
                     <h3>Saved Searches:</h3>
                     <ul class="list-group mb-3" id="saved-searches">
 
