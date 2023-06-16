@@ -1,21 +1,62 @@
 :root {
     --bg: #ffffff;
     --bg-panel: #f0f0f0;
+    --bg-accent: #dfdfdf;
     --color-primary: #000000;
     --color-secondary: #4f4f4f;
     --font-family: 'Roboto', sans-serif;
+
     --gradient-light: rgba(63,94,251,1);
     --gradient-dark: rgba(252,70,107,1);
+
+    --gradient-thunderstorm-light: rgba(35,37,38,1);
+    --gradient-thunderstorm-dark: rgba(65,67,69,1);
+    
+    --gradient-drizzle-light: rgba(174,194,201,1);
+    --gradient-drizzle-dark: rgba(83,120,149,1);
+
+    --gradient-rain-light: rgba(1,87,155,1);
+    --gradient-rain-dark: rgba(48,63,159,1);
+
+    --gradient-snow-light: rgba(227,242,253,1);
+    --gradient-snow-dark: rgba(144,202,249,1);
+
+    --gradient-clear-light: rgba(38,198,218,1);
+    --gradient-clear-dark: rgba(30,136,229,1);
+
+    --gradient-clouds-light: rgba(135,206,235,1);
+    --gradient-clouds-dark: rgba(70,130,180,1);
 }
 
 .dark-theme {
     --bg: #121212;
     --bg-panel: #1d1d1d;
+    --bg-accent: #292929;
     --color-primary: #ffffff;
     --color-secondary: #bdbdbd;
-    --gradient-light: rgba(252,70,107,1);
+    
+    --gradient-light: rgba(42,42,42,1);
     --gradient-dark: rgba(63,94,251,1);
+
+    --gradient-thunderstorm-light: rgba(25,27,28,1);
+    --gradient-thunderstorm-dark: rgba(35,37,38,1);
+    
+    --gradient-drizzle-light: rgba(124,144,151,1);
+    --gradient-drizzle-dark: rgba(43,80,109,1);
+
+    --gradient-rain-light: rgba(0,47,95,1);
+    --gradient-rain-dark: rgba(28,43,109,1);
+
+    --gradient-snow-light: rgba(127,142,153,1);
+    --gradient-snow-dark: rgba(94,152,199,1);
+
+    --gradient-clear-light: rgba(18,98,118,1);
+    --gradient-clear-dark: rgba(10,86,159,1);
+
+    --gradient-clouds-light: rgba(25,25,112,1);
+    --gradient-clouds-dark: rgba(0,0,128,1);
 }
+
 
 .theme-toggle {
     display: flex;
@@ -117,14 +158,35 @@ aside {
     height: 100vh;
 }
 
+.card {
+    background-color: transparent;
+    border: 2px solid rgba(255,255,255,0.4);
+}
+
+#five-day .card {
+    box-shadow: 15px 10px 20px 0px rgba(0, 0, 0, 0.329);
+    margin-right: auto !important;
+    margin-left: auto;
+    padding: 5px 25px;
+    border-radius: 15px;
+}
+
 #dashboard {
     padding-left: 5vh;
+    padding-right: 7vh;
     padding-top: 3vh;
+    background: linear-gradient(45deg, var(--gradient-light), var(--gradient-dark)); /* Background of the main weather section */
+    color: white; /* Text color */
 }
 
 #weather-display {
-    width: 100vh;
-    background: linear-gradient(45deg, var(--gradient-light), var(--gradient-dark));
+    padding: 2%;
+    width: auto;
+}
+
+#weather-display.card {
+    border: 2px solid rgba(255,255,255,0.65);
+    border-radius: 12px;
 }
 
 .delete-btn {
@@ -133,12 +195,13 @@ aside {
     color: var(--color-primary);
 }
 
-.list-group-item:hover {
-    background-color: #262626;
+.list-group-item {
+    background-color: var(--bg);
 }
 
-#five-day .card-body {
-    background: linear-gradient(45deg, var(--gradient-light), var(--gradient-dark));
+.list-group-item:hover {
+    background-color: var(--bg-accent);
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {

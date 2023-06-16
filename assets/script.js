@@ -11,6 +11,22 @@ var date = {
     "day6": moment().add(5, "d").format("l"),
 }
 
+// Function to get the local SVG icon based on the "icon" value
+function getIcon(icon) {
+    var iconMapping = {
+        "01": "clear",
+        "02": "clouds",
+        "03": "clouds",
+        "04": "clouds",
+        "09": "rain",
+        "10": "rain",
+        "11": "thunderstorm",
+        "13": "snow",
+    };
+    var weatherCondition = iconMapping[icon.substring(0, 2)];
+    return 'assets/icons/' + weatherCondition + '.svg';
+}
+
 // Query the weather API
 function citySearch(result, city) {
     $.ajax({
@@ -18,17 +34,20 @@ function citySearch(result, city) {
         method: "GET"
     }).then(function (response) {
         displayResult(response, city);
-
     })
 }
 
 // Display the weather results
 function displayResult(result, city) {
+    var weather = result.current.weather[0].main.toLowerCase();
+    var gradientLight = "--gradient-" + weather + "-light";
+    var gradientDark = "--gradient-" + weather + "-dark";
+    $("#dashboard").css("background", "linear-gradient(45deg, var(" + gradientLight + "), var(" + gradientDark + "))");
     $("#dashboard").css("visibility", "visible")
     // display current weather
     $("#city").text(city + " (" + date.day1 + ")");
-    var icon = $("<img src='https://openweathermap.org/img/wn/" + result.current.weather[0].icon + "@2x.png'>");
-    $("#city").append(icon);
+    var icon = $("<img style='width:75px;' src='" + getIcon(result.current.weather[0].icon) + "'>");
+    $("#city").append(icon);    $("#city").append(icon);
     $("#temp").text("Temperature: " + result.current.temp + " °F");
     $("#humidity").text("Humidity: " + result.current.humidity + "%");
     $("#wind").text("Wind Speed: " + result.current.wind_speed + " MPH");
@@ -61,11 +80,18 @@ function displayResult(result, city) {
         var cardBody = $("<div class='card-body'></div>")
         var cardDate = date["day" + [i + 1]];
         var cardTitle = $("<h5 class='card-title'>" + cardDate + "</h5>")
-        var cardIcon = $("<img src='https://openweathermap.org/img/wn/" + result.daily[i].weather[0].icon + ".png'>")
+        var cardIcon = $("<img src='" + getIcon(result.daily[i].weather[0].icon) + "'>");
         var cardTemp = $("<p>Temp: " + result.daily[i].temp.day + " °F</p>")
         var cardHum = $("<p>Humidity: " + result.daily[i].humidity + "%</p>")
         cardBody.append(cardTitle, cardIcon, cardTemp, cardHum);
         card.append(cardBody)
+        
+        // Update the background of each card based on the weather:
+        var dailyWeather = result.daily[i].weather[0].main.toLowerCase();
+        var dailyGradientLight = "--gradient-" + dailyWeather + "-light";
+        var dailyGradientDark = "--gradient-" + dailyWeather + "-dark";
+        card.css("background", "linear-gradient(45deg, var(" + dailyGradientLight + "), var(" + dailyGradientDark + "))");
+        
         $("#five-day").append(card);
     }
 }
@@ -73,7 +99,7 @@ function displayResult(result, city) {
 // Convert address into coordinates for accurate results
 function geocodeAddress(address) {
     $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyDnRG3kLW44MTYI0s7fplt8aQMFvRe1glQ",
+        url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyBCcMnr7sLDAIuN_GrqkivtS0r5BcHau2M",
         method: "GET"
     }).then(function (response) {
         console.log(response);
